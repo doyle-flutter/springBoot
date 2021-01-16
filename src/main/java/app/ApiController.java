@@ -26,4 +26,11 @@ public class ApiController{
         System.out.println(id);
         return String.format("{\"result\":\"value\", \"id\" : \"%s\"}", id);
     }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping(path = "/{id}")
+    public String getApiNotFound(@PathVariable("id") String id){
+        System.out.println(id);
+        return String.format("{\"result\":\"notFound404\", \"id\" : \"%s\"}", id);
+    }
 }

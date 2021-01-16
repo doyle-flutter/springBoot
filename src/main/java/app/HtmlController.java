@@ -3,14 +3,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HtmlController {
+
     // res HTML
     @CrossOrigin(origins = "*")
-    @GetMapping(path = "/hi")
+    @GetMapping(path = "/hello")
     public String getApiHTML(Model model){
-        model.addAttribute("name", "My Name is Jamess");
+        model.addAttribute("name", "My Name is James");
         return "hello";
     }
 }
