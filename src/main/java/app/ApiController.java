@@ -30,18 +30,18 @@ public class ApiController{
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping(path = "/sendNode/{id}")
+    @GetMapping(path = "/sendNode/{idㄷ}")
     public String getApiReq(@PathVariable("id") String id){
-        final String API_SERVER = "http://192.168.0.3:3000";
+        final String API_SERVER = "http://127.0.0.1:3000";
         final String PATH = "/spring";
         final String queryString = "?id="+id;
 
         WebClient client = WebClient
-                .builder()
-                .baseUrl(API_SERVER+PATH+queryString)
-                .defaultCookie("cook","CookValue")
-                .defaultHeader("CustomHeader",id)
-                .build();
+            .builder()
+            .baseUrl(API_SERVER+PATH+queryString)
+            .defaultCookie("cook","CookValue")
+            .defaultHeader("CustomHeader",id)
+            .build();
         WebClient.RequestHeadersSpec<?> req = client.get();
         String response = Objects.requireNonNull(req.exchange().block()).bodyToMono(String.class).block();
         return String.format("{\"result\":\"Node.js\", \"id\" : %s}", response);
