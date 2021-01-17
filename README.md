@@ -8,8 +8,8 @@
   - QueryString
 - Response HTML File(Static)
 - Response Template(Thymeleaf)
-- [ ] Socket
-- [ ] HTTP Request
+- Error Page : RestAPI & NotFoundPage
+- HTTP : WebClient
 - Database
   - [ ] MySQL
   - [ ] NoSQL
